@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -12,7 +11,6 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { Eye, EyeOff } from "lucide-react";
 import Image from "next/image";
-import Logo from "@/Assest/Logo (1).png";
 import Exclude from "@/Assest/Exclude.png";
 
 export default function SignupPage() {
@@ -185,10 +183,13 @@ export default function SignupPage() {
 
       {/* Right Side - Image (Hidden on Mobile) */}
       <div className="hidden md:block w-1/2 h-screen overflow-hidden">
-        <img
+        <Image
           src="/maglo.png"
           alt="Maglo Finance Management"
+          width={1000}
+          height={1080}
           className="w-full h-full object-cover"
+          priority
         />
       </div>
     </div>

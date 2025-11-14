@@ -175,7 +175,7 @@ export default function LoginPage() {
         {/* Footer - Sign Up Link */}
         <div className="text-center space-y-2">
           <p className="text-gray-700 dark:text-black">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/signup" className="text-primary hover:underline font-medium dark:text-green-400">
               Sign up for free
             </Link>
@@ -185,10 +185,13 @@ export default function LoginPage() {
 
       {/* Right Side - Image (Hidden on Mobile) */}
       <div className="hidden md:block w-1/2 h-screen overflow-hidden">
-        <img
+        <Image
           src="/maglo.png"
           alt="Maglo Finance Management"
+          width={1000}
+          height={1080}
           className="w-full h-full object-cover"
+          priority
         />
       </div>
     </div>

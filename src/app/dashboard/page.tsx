@@ -26,13 +26,13 @@ import { DollarSign, Briefcase, Users } from "lucide-react";
 
 export default function DashboardPage() {
   const { user } = useAuthStore();
-  const { invoices, stats, setInvoices, setLoading, calculateStats } = useInvoiceStore();
+  const { invoices, stats, setInvoices } = useInvoiceStore();
   const { isDark } = useTheme();
 
   useEffect(() => {
     // Load dummy data for demo
     setInvoices(dummyInvoices as any);
-  }, []);
+  }, [setInvoices]);
 
   const recentInvoices = dummyInvoices.slice(0, 3);
 

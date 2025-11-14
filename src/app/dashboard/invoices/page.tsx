@@ -77,7 +77,7 @@ export default function InvoicesPage() {
     return () => {
       mounted = false;
     };
-  }, [user?.$id]);
+  }, [user?.$id, setInvoices, toast]);
 
   // Merge invoices from the store into the displayed list so newly created invoices appear
   useEffect(() => {
@@ -107,7 +107,7 @@ export default function InvoicesPage() {
       return [...toAdd, ...prev];
     });
 
-    setSelectedInvoice((cur) => cur || mapped[0] || displayInvoices[0] || null);
+    setSelectedInvoice((cur) => cur || mapped[0] || null);
   }, [invoices]);
 
   // Filter invoices based on search

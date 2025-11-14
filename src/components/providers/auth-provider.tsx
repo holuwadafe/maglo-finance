@@ -12,7 +12,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       hasChecked.current = true;
       checkAuth();
     }
-  }, []);
+  }, [checkAuth]);
 
   if (isLoading) {
     return (

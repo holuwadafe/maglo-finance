@@ -17,9 +17,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
     try {
       const stored = localStorage.getItem("theme");
-      return (stored as Theme) || "system";
+      return (stored as Theme) || "light";
     } catch (e) {
-      return "system";
+      return "light";
     }
   });
 
