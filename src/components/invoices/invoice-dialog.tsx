@@ -138,17 +138,16 @@ export function InvoiceDialog({
       };
 
       if (invoice?.$id) {
+        // DEMO MODE: Update invoice in local store
         const updated = await invoiceService.updateInvoice(invoice.$id, invoiceData);
         updateInvoice(invoice.$id, updated);
-        // show success modal for update
         setShowSuccess(true);
       } else {
+        // DEMO MODE: Create invoice and add to local store
         const created = await invoiceService.createInvoice(invoiceData);
         addInvoice(created);
-        // show success modal for create
         setShowSuccess(true);
       }
-      // do not immediately close or navigate — wait for user to dismiss success modal
     } catch (error: any) {
       toast({
         title: "Error",
